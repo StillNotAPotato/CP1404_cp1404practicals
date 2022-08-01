@@ -2,6 +2,7 @@
 CP1404/CP5632 - Practical
 Broken program to determine score status
 """
+import random
 
 
 # TODO: Fix this!
@@ -11,6 +12,7 @@ def main():
 
 
 def grade_score(score):
+    """Takes user's score and categorises it"""
     if score < 0 or score > 100:
         print("Invalid score")
 
@@ -20,7 +22,7 @@ def grade_score(score):
     elif score >= 50:
         return "Pass"
 
-    elif score <= 50:
+    else:
         return "Bad"
 
 
