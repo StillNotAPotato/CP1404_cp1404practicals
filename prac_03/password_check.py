@@ -35,3 +35,6 @@ def get_password():
         print("Password does not meet minimum length requirement")
         password = input(f"Please enter a password of minimum {MIN_LENGTH} characters: ")
     return password
+
+
+main()
