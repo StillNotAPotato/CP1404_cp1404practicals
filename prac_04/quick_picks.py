@@ -6,7 +6,7 @@ NUMBER_OF_PICKS = 6
 
 
 def main():
-    pass
+    print("How many picks do you want: ")
 
 
 main()
