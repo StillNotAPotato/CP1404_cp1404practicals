@@ -13,14 +13,14 @@ def main():
         number_of_picks = int(input("How many quick picks? "))
 
     for i in range(number_of_picks):
-        quick_pick = []     # list to store the digits for the pick
+        quick_pick = []  # list to store the digits for the pick
         for j in range(NUMBER_OF_DIGITS_IN_LINE):
-            number = random.randint(MINIMUM, MAXIMUM)     # for every iteration, number is assigned any value from
+            number = random.randint(MINIMUM, MAXIMUM)  # for every iteration, number is assigned any value from
             # 1 to 45
             while number in quick_pick:
                 number = random.randint(MINIMUM, MAXIMUM)
-            quick_pick.append(number)   # add to the quick pick list
-        quick_pick.sort()   # sort the numbers in ascending order
+            quick_pick.append(number)  # add to the quick pick list
+        quick_pick.sort()  # sort the numbers in ascending order
 
         print(" ".join("{:2}".format(number) for number in quick_pick))
 
