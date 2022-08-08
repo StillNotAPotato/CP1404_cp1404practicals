@@ -1,12 +1,15 @@
-import random
-
 MINIMUM = 1
 MAXIMUM = 45
-NUMBER_OF_PICKS = 6
+NUMBER_OF_DIGITS_IN_LINE = 6
 
 
 def main():
-    print("How many picks do you want: ")
+    number_of_picks = int(input("How many picks do you want: "))
+    while number_of_picks <= 0:
+        print("Got to be at least one mate")
+        number_of_picks = int(input("How many picks do you want: "))
+
+
 
 
 main()
