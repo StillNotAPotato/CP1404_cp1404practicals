@@ -19,10 +19,10 @@ def main():
             # 1 to 45
             while number in quick_pick:
                 number = random.randint(MINIMUM, MAXIMUM)
-                quick_pick.append(number)   # add to the quick pick list
-            quick_pick.sort()   # sort the numbers in ascending order
+            quick_pick.append(number)   # add to the quick pick list
+        quick_pick.sort()   # sort the numbers in ascending order
 
-            print(f"{number}" for number in quick_pick)
+        print(" ".join("{:2}".format(number) for number in quick_pick))
 
 
 main()
