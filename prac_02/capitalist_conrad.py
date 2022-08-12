@@ -18,7 +18,7 @@ OUTPUT_FILE = "stock_output.txt"
 
 # open output file for writing (this creates a new file if it doesn't exist)
 out_file = open(OUTPUT_FILE, 'w')
-
+OUTPUT_FILE = out_file.read()
 price = INITIAL_PRICE
 day = 0
 print("Starting price: ${:,.2f}".format(price), file=out_file)
