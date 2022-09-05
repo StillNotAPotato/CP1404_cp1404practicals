@@ -15,14 +15,20 @@ class ConvertMilesKm(App):
         return self.root
 
     def handle_update(self):
-        value = self.root.ids.input_miles.text
+        """Update output label"""
+        result = self.handle_calculation()
+        self.root.ids.output_label.text = str(result)
+    def handle_calculation(self):
+        """Convert miles to km"""
+        value = float(self.root.ids.input_label.text)
         result = value * MILES_TO_KM
-        self.root.ids.output_label.text = result
+        return result
+        
+
     def handle_increment(self):
         pass
 
     def handle_decrement(self):
         pass
-
 
 ConvertMilesKm().run()
