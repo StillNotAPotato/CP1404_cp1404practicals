@@ -23,9 +23,5 @@ class DynamicLabels(App):
             print(name)
 
 
-
-
-
-
 if __name__ == '__main__':
     DynamicLabels().run()
