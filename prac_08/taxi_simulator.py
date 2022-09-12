@@ -18,8 +18,7 @@ def main():
     while menu_choice != "q":
         if menu_choice == "c":
             print("Taxis available: ")
-            for i, taxi in enumerate(taxis):
-                print(f"{i} - {taxi}")
+            display_list_of_taxis(taxis)
             taxi_choice = int(input("Choose taxi: "))
             try:
                 current_taxi = taxis[taxi_choice]
@@ -45,6 +44,10 @@ def main():
 
     print(f"Total trip cot: ${total_bill:.2f}")
     print("Taxis are now: ")
+    display_list_of_taxis(taxis)
+
+
+def display_list_of_taxis(taxis):
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
 
