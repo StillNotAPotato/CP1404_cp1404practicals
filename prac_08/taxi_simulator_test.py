@@ -24,6 +24,12 @@ def main():
     taxi.drive(25)
     print(taxi, taxi.get_fare())
 
+    # test SilverServiceTaxi class
+    fancy_taxi = SilverServiceTaxi("Limousine", 100, 60)
+    print(fancy_taxi, fancy_taxi.get_fare())
+    fancy_taxi.drive(20)
+    print(fancy_taxi, fancy_taxi.get_fare())
+
 
 if __name__ == '__main__':
     main()
