@@ -11,5 +11,19 @@ def main():
     print(f"odometer = {bus.odometer}")
     print(bus)
 
+    # Test drive bus
+    # distance = int(input("How far? "))
+    # while distance > 0:
+    #   actual_distance_travelled = bus.drive(distance)
+    #  print(f"{str(bus)} travelled {actual_distance_travelled}")
+    #        distance = int(input("How far? "))
+
+    # Test Taxi class
+    taxi = Taxi("Hyundai i30", 100)
+    print(taxi)
+    taxi.drive(25)
+    print(taxi, taxi.get_fare())
+
+
 if __name__ == '__main__':
     main()
