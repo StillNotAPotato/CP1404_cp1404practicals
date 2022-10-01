@@ -7,48 +7,70 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    """Start of subject reader program"""
-    subjects = load_subjects()  # data = None
-    # +----------------------
-    #                       V
-    display_subjects(subjects)
-    total_number_of_students = get_total_number_of_students(subjects)
-    # display_subjects(subjects)
-    print(f"Total number of students taking {len(subjects)} subjects = {total_number_of_students}")
+    data = get_data()
+    print(display_data())
 
 
-def display_subjects(subjects):
-    """Display subject code, lecturer and number of students."""
-    # CP1401 is taught by Ada Lovelace and has 192 students
-    for subject in subjects:
-        print(f"{subject[0]} is taught by {subject[1]:12} and has {subject[2]:4} students")
-
-
-def get_total_number_of_students(subjects):
-    """Calculate total number of students in all subjects"""
-    total_students = 0
-    for subject in subjects:
-        total_students += subject[2]
-    return total_students
-
-
-def load_subjects():
+def get_data():
     """Read data from file formatted like: subject,lecturer,number of students."""
-    subjects = []  # a list of lists (a list of subject list)
-    input_file = open(FILENAME, "r")
+    data = []
+    input_file = open(FILENAME)
     for line in input_file:
-        # print("line", line)  # See what a line looks like
-        # print("repr", repr(line))  # See what a line really looks like
+        # print(line)  # See what a line looks like
+        # print(repr(line))  # See what a line really looks like
         line = line.strip()  # Remove the \n
         parts = line.split(',')  # Separate the data into its parts
-        # print("parts:", parts)  # See what the parts look like (notice the integer is a string)
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
-        # print("parts after int(),", parts)  # See if that worked
-        # print("----------")
-        subjects.append(parts)  # put in the subject into a list of subjects
+        data.append(parts)
+    # print(parts)  # See what the parts look like (notice the integer is a string)
+    # print(parts)  # See if that worked
+    # list_of_parts = [parts for i in range(1)]
+
+    # print("----------")
     input_file.close()
-    # missing return statement
-    return subjects  # return list of lists
+    return data
 
 
-main()
+# CP1401 is taught by Ada Lovelace and has 192 students
+# Cp1404 is taught by Alan Turing and has 98 students
+def display_data():
+    all_subjects = ""
+    subjects = get_data()
+    for subject in subjects:
+        subject_code = subject[0]
+        subject_teacher = subject[1]
+        number_of_students = subject[2]
+        all_subjects = all_subjects + f"{subject_code} is taught by {subject_teacher} and has {number_of_students} students\n"
+    return all_subjects
+
+
+def alice():
+    candy = ['a', 'b', 'c']
+    return candy
+
+
+def bob():
+    candy = [1]
+    return candy
+
+
+def all_candy():
+    candy = bob()
+    print(f"Bob has {candy} candies")
+    candy = alice()
+    print(f"Alice has {candy} candies")
+
+
+def message():
+    greeting = 'hello'
+    return greeting
+
+
+def say():
+    print(message())
+    greeting = 'world'
+    print(greeting)
+
+
+if __name__ == '__main__':
+    main()
