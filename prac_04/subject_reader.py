@@ -40,7 +40,7 @@ def display_data():
         subject_code = subject[0]
         subject_teacher = subject[1]
         number_of_students = subject[2]
-        all_subjects = all_subjects + f"{subject_code} is taught by {subject_teacher} and has {number_of_students} students\n"
+        all_subjects = all_subjects + f"{subject_code} is taught by {subject_teacher} and has {number_of_students} students\n "
     return all_subjects
 
 
